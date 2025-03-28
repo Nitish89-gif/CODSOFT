@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: url('https://source.unsplash.com/random/1920x1080?nature,technology') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(8, 16, 30, 0.8);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: cyan;
+        }
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            gap: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .home-text {
+            max-width: 500px;
+            text-align: left;
+        }
+        .home-text h1 {
+            font-size: 45px;
+        }
+        .home-text span {
+            color: cyan;
+        }
+        .profile-img img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid cyan;
+            box-shadow: 0 0 20px cyan;
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: 0.3s; 
+        }
+        .social-icons a:hover {
+            color: cyan;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: cyan;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        /* About Section - Image on Left, Text on Right */
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            text-align: left;
+            flex-direction: row-reverse;
+        }
+        .about-text {
+            max-width: 600px;
+        }
+        .about-img img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid cyan;
+            box-shadow: 0 0 20px cyan;
+        }
+        .services-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .service-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px cyan;
+        }
+        .service-box h3 {
+            color: cyan;
+            margin-bottom: 10px;
+        }
+        .service-box p {
+            font-size: 14px;
+            color: #ccc;
+        }
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: cyan;
+            border-radius: 50%;
+        }
+        .service-box:nth-child(odd)::before {
+            background: #9370DB;
+        }
+        .skills-container {
+            width: 80%;
+            margin: auto;
+            text-align: left;
+        }
+        .skill-box {
+            margin-bottom: 20px;
+        }
+        .skill-box p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+        .skill-icon {
+            font-size: 24px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #444;
+            border-radius: 5px;
+            margin-top: 5px;
+            position: relative;
+        }
+        .progress {
+            height: 100%;
+            border-radius: 5px;
+            background: cyan;
+        }
+
+        /* Skill Level */
+        .html .progress { width: 90%; }
+        .css .progress { width: 80%; }
+        .python .progress { width: 75%; }
+        .java .progress { width: 50%; }
+        .cpp .progress { width: 50%; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: cyan;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .resume {
+            padding: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .footer {
+            padding: 20px;
+            background-color: rgba(8, 16, 30, 0.8);
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio.</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="home" class="home">
+        <div class="home-text">
+            <h1>Hello, It's Me<br><span>P. Nitish</span></h1>
+            <h2>And I'm a <span>Frontend Developer</span></h2>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            </div>
+            <a href="#about" class="btn">More About Me</a>
+        </div>
+        <div class="profile-img">
+            <img src="./WhatsApp Image 2025-03-23 at 10.23.00_982da65e.jpg" alt="Profile Picture">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about">
+            <div class="about-img">
+                <img src="./WhatsApp Image 2025-03-23 at 10.23.00_982da65e.jpg" alt="Profile Picture">
+            </div>
+            <div class="about-text">
+                <p>A Full Stack Web Developer is skilled in both front-end and back-end development, enabling them to
+                    build complete web applications. They handle everything from designing the user interface using
+                    HTML, CSS, JavaScript, and frameworks like React to building server-side functionality using languages
+                    like Node.js, Python, or Ruby and managing databases (SQL or NoSQL). Full stack developers are
+                    proficient in version control (Git), APIs, deployment tools, and security. Their versatility makes them
+                    valuable in creating dynamic, user-friendly, and robust web applications from start to finish.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Services</h2>
+        <p><br></p>
+         <div class="services-container">
+            <div class="service-box">
+                <h3>Web Design</h3>
+                <p>Web design involves creating visually appealing and user-friendly websites. It focuses on layout, color schemes, typography, and interactive elements to ensure a smooth user experience. </p>
+            </div>
+            <div class="service-box">
+                <h3>App Design</h3>
+                <p>App design focuses on crafting intuitive, visually appealing, and functional mobile or web applications. It ensures a seamless user experience by combining aesthetics with usability. </p>
+            </div>
+            <div class="service-box">
+                <h3>UI/UX Design</h3>
+                <p>UI (User Interface) and UX (User Experience) design play a crucial role in making digital products visually appealing, user-friendly, and efficient.</p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>My <span style="color: cyan;">Skills</span></h2>
+        <h3>Technical Skills</h3>
+        <div class="skills-container">
+            <div class="skill-box html">
+                <p><i class='bx bxl-html5 skill-icon' style="color: orange;"></i> HTML 90%</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+            </div>
+            <div class="skill-box css">
+                <p><i class='bx bxl-css3 skill-icon' style="color: blue;"></i> CSS 80%</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+            </div>
+            <div class="skill-box python">
+                <p><i class='bx bxl-python skill-icon' style="color: yellow;"></i> Python 75%</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+            </div>
+            <div class="skill-box java">
+                <p><i class='bx bxl-java skill-icon' style="color: brown;"></i> Java 50%</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+            </div>
+    </section>
+    <section id="resume" class="resume">
+        <h2>Download My Resume</h2>
+        <a href="resume.pdf" download class="btn">Download Resume</a>
+    </section>
+    
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: example@example.com | Phone: 123-456-7890</p>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
