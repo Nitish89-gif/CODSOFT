@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+</head>
+<style>
+      body{
+          background-color: #bcc2c1;
+          margin: 0px;
+          padding: 0%;
+          text-align: center;
+          background-image: url("./starry-sky-1655503_1280.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+      .heading{
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: black;
+      }
+      input{
+        width:75px;
+        height: 70px;
+        border-radius: 50%;
+        font-size: 40px;
+        margin: 10px;
+      }
+
+      .display{
+        width: 390px;
+        height: 50px;
+        border-radius: 10px;  
+        background-color: beige; 
+       }
+
+
+</style>
+<body>
+    <h1 class="heading"> Simple Calculator</h1>
+    <form action="" name="calc">
+        <input type="text" class="display"><br>
+        <input class="btn" type="button" value="7" style="background-color: black; color: white; "  onclick="calc.display.value +='7'">
+        <input class="btn" type="button" value="8" style="background-color: black; color: white;">
+        <input class="btn" type="button" value="9" style="background-color: black; color: white;">
+        <input class="btn" type="button" value="/" style="background-color:rgb(255, 141, 60, 0.995);"><br>
+        <input class="btn" type="button" value="4"  style="background-color: black; color: white;">
+        <input class="btn" type="button" value="5" style="background-color: black; color: white;">
+        <input class="btn" type="button" value="6"  style="background-color: black; color: white;">
+        <input class="btn" type="button" value="×" style="background-color: rgb(255, 141, 60, 0.995);"><br>
+        <input class="btn" type="button" value="1" style="background-color: black; color: white;">
+        <input class="btn" type="button" value="2"  style="background-color: black; color: white;">
+        <input class="btn" type="button" value="3" style="background-color: black; color: white;">
+        <input class="btn" type="button" value="-" style="background-color: rgb(255, 141, 60, 0.995);"><br>
+        <input class="btn" type="button" value="C" style="background-color: rgba(236, 121, 13, 0.378);">
+        <input class="btn" type="button" value="0" style="background-color: black; color: white;">
+        <input class="btn" type="button" value="=" style="background-color: rgb(255, 141, 60, 0.995);">
+        <input class="btn" type="button" value="+" style="background-color: rgba(255, 141, 60, 0.995);"><br>
+    </form>
+</body>
+</html>
